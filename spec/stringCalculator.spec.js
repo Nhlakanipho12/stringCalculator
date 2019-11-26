@@ -26,7 +26,7 @@ describe('stringCalculator', function () {
     it('should ignore negative numbers and throw an error', function () {
       expect(function () {
         return stringCalculator.add("1,-2,4");
-      }).toThrowError(Error);
+      }).toThrowError('Negative numbers are not allowed: -2');
     });
   
     it('should ignore numbers more than 1000', function () {
