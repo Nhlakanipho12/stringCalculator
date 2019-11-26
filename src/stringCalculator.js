@@ -63,6 +63,3 @@ class stringCalculator {
   
   
 module.exports = stringCalculator;
-var istance_of;
-instance_of = new stringCalculator();
-console.info(instance_of.add("1,8,6,9,6"));
