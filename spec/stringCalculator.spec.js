@@ -23,9 +23,6 @@ describe('stringCalculator', function () {
       expect(stringCalculator.add("1\n2,3")).toEqual(6);
     });
   
-    // it('should support custom delimiters', function () {
-    //   stringCalculator.add    });
-  
     it('should ignore negative numbers and throw an error', function () {
       expect(function () {
         return stringCalculator.add("1,-2,4");

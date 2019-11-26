@@ -19,14 +19,14 @@ class stringCalculator {
   
     getDelimiter(input){
       const delimiters = [];
-      const multipleDelimiterRegexp = /(?:^\/\/)?\[([^\[\]]+)\]\n?/gm; /** /(?:^\/\/)?\[([^\[\]]+)\]\n?/g */
+      const multipleDelimiterRegexp = /(?:^\/\/)?\[([^\[\]]+)\]\n?/g;
       let matches = multipleDelimiterRegexp.exec(input);
       while(matches !== null){
         delimiters.push(matches[1]);
         matches = multipleDelimiterRegexp.exec(input)
       }
       if(delimiters.length > 0){
-        return new RegExp('['+delimiters.join('|')+']');
+        return new RegExp('['+ delimiters.join('|')+']');
       }
       matches = /^\/\/(.*)\n/.exec(input)
       if(matches && matches[1]){
@@ -46,14 +46,14 @@ class stringCalculator {
     const isNagative = []
       const finalSum = numbers.reduce((sum, n) =>{
         if(n > 1000){
-          return 0;
+          return sum;
         }
         if(n < 0){
           isNagative.push(n)
           return 0;
         }
         return sum + n;
-      },0)
+      })
       if(isNagative.length > 0){
         throw new Error('Negative numbers are not allowed: '+isNagative.join(','))
       }
@@ -63,3 +63,6 @@ class stringCalculator {
   
   
 module.exports = stringCalculator;
+var istance_of;
+instance_of = new stringCalculator();
+console.info(instance_of.add("1,8"));
